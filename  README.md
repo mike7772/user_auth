@@ -10,7 +10,7 @@
   - login (user: { email: "email"  password: "password"}) { token} 
   - logout (user: { email: "email"}) { fullName}
   - changePassword (user: {email: "" oldPassword: "" password: ""}){}
-  - generateOTP (user: {email: ""}){}       generate the secret key which enables the user to access the authenticator apps
+  - generateOTP (user: {email: ""}){}       generate the secret key and qrcode which enables the user to access the authenticator apps
   - verifyOTP (user: {email: "" otpToken: ""}) {}    enable the 2FA feature and return a success message
   - validateOTP (user: {email: "" otpToken: ""}) {}  handles OTP verification action where you will be required to provide the OTP token to verify your identity.
   - disableOTP (user: {email: "" }) {}    disable 2fa authentication

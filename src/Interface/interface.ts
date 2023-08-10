@@ -12,6 +12,7 @@ export interface TwoFaResponse {
   otp_auth_url: string;
   otp_base32: string;
   message: string;
+  qr: string;
 }
 
 export interface CreateUser {

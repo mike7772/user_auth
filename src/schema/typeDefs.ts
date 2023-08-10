@@ -9,6 +9,7 @@ const typeDefs = `
     email: String!
     password: String!
     token: String
+    qr: String
     message: String
     otp_base32: String,
     otp_enabled: Boolean,

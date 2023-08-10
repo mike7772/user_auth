@@ -12,6 +12,7 @@ import {
   twoFa,
   twoFaOTP,
 } from "../Interface/interface";
+const qr = require('qrcode');
 const User = require("../models/mongo.model");
 
 export default class UserUpdater {
@@ -120,6 +121,9 @@ export default class UserUpdater {
         { new: true }
       ); // update the database
 
+      const qrCode = await qr.toDataURL(base32_secret.toString());
+      
+      updateduser.qr =  `<img src="${qrCode}" alt="QR Code" />`
       updateduser.message = " OTP Generated Successfully";
 
       return updateduser as TwoFaResponse;
