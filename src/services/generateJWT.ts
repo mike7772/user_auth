@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 
+// signs a jwt token 
 export default (
   payload: object,
   secret: string,

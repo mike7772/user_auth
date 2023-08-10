@@ -1,3 +1,5 @@
+
+// Predefined types for object inputs and returned results 
 export interface UserResponse {
   email: string;
   fullName: string;

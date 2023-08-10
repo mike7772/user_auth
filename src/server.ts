@@ -10,23 +10,23 @@ const resolvers = require("./resolver/resolvers");
 const mongoose = require("mongoose");
 
 async function startServer() {
-  const app = express();
+  const app = express(); // initializing the express server
 
   const apolloServer = new ApolloServer({
-    typeDefs: typeDefs.default,
-    resolvers,
+    typeDefs: typeDefs.default, //passes the schema
+    resolvers, // passes the query function and mutation 
     cors: {
       origin: "http://localhot:3000",
       Credentials: true,
     },
-    context: ({ req, res }: any) => ({ req, res }),
-    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+    context: ({ req, res }: any) => ({ req, res }), // passing the req and response value to the context 
+    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],  // enables the graphql playground on the local machine
   });
 
-  await apolloServer.start();
+  await apolloServer.start(); // starting the apollo server
 
-  apolloServer.applyMiddleware({ app: app });
-  app.use(cookieParser());
+  apolloServer.applyMiddleware({ app: app });  // Integrate Apollo Server with Express app on /graphql (default)
+  app.use(cookieParser()); // used for parsing cookies
   app.use((req: Request, res: Response) => {
     res.send("Hello from apollo server");
   });

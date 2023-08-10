@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+
+// Instantiating mongodb schema using mongoose orm 
 const UserSchema = new mongoose.Schema({
   fullName: {
     type: String,

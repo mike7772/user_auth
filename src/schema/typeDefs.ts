@@ -1,3 +1,6 @@
+
+// Defines database schema, input schema, query function and mutations for graphql
+
 const typeDefs = `
 
   type User {
