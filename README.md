@@ -1,5 +1,5 @@
 #  Installation
-1. Run git clone https://mike7772/user_auth.git
+1. Run git clone https://github.com/mike7772/user_auth.git
 2. Run yarn of npm install
 3. The .env file is exposed so no need to create one
    
