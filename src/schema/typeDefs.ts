@@ -1,5 +1,3 @@
-const { gql } = require("apollo-server-express");
-
 const typeDefs = `
 
   type User {
@@ -55,7 +53,7 @@ const typeDefs = `
     verifyOTP(user: twoFa): User
     validateOTP(user: twoFa): User
     disableOTP(user: UserInput): User
-  
+    removeUser(user: UserInput): User
   }
 `;
 

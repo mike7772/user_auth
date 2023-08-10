@@ -1,6 +1,13 @@
 import UserController from "../Controller/UserController";
+import UserCreator from "../Controller/UserCreator";
+import UserDeleter from "../Controller/UserDeleter";
+import UserUpdater from "../Controller/UserUpdater";
 const User = require("../models/mongo.model");
+
 const userController = new UserController();
+const userCreator = new UserCreator();
+const userUpdater = new UserUpdater();
+const userDeleter = new UserDeleter();
 
 module.exports = {
   Query: {
@@ -13,13 +20,14 @@ module.exports = {
     getUser: userController.getUser,
   },
   Mutation: {
-    createUser: userController.createUser,
+    createUser: userCreator.createUser,
     login: userController.login,
     logout: userController.logout,
-    changePassword: userController.changePassword,
-    generateOTP: userController.generateOTP,
-    verifyOTP: userController.verifyOTP,
+    changePassword: userUpdater.changePassword,
+    generateOTP: userUpdater.generateOTP,
+    verifyOTP: userUpdater.verifyOTP,
     validateOTP: userController.validateOTP,
-    disableOTP: userController.disableOTP,
+    disableOTP: userUpdater.disableOTP,
+    removeUser: userDeleter.removeUser,
   },
 };
